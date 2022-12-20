@@ -27,13 +27,12 @@ button{
     position: sticky;
     z-index: 100;
     top: 0;
-    background: #0a0a1f;
+    background: rgb(29, 29, 51);
 
 }
 .navbar-logo{
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 .navbar-logo ion-icon{
     margin-right: 17px;
@@ -75,114 +74,212 @@ button{
     transform: scale(1.1);
     background: blueviolet;
 }
-/*header-end*/
 
-/*mobile-start*/
-#mobile1{
-    padding: 40px 0;
+.menu{
+    display: none;
 }
-.novve{
-    padding: 40px 0;
+#menu__toggle {
+    opacity: 0;
+}
+
+#menu__toggle:checked ~ .menu__btn > span {
+    transform: rotate(45deg);
+}
+#menu__toggle:checked ~ .menu__btn > span::before {
+    top: 0;
+    transform: rotate(0);
+}
+#menu__toggle:checked ~ .menu__btn > span::after {
+    top: 0;
+    transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menu__box {
+    visibility: visible;
+    right: 0;
+}
+
+.menu__btn {
     display: flex;
     align-items: center;
-  justify-content: space-between;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    z-index: 1;
 }
-.novve-2 h3{
+
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #616161;
+    transition-duration: .25s;
+}
+
+.menu__btn > span::before {
+    content: '';
+    top: -8px;
+}
+.menu__btn > span::after {
+    content: '';
+    top: 8px;
+}
+
+.menu__box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    right: 100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 80px 0;
+    list-style: none;
+    background-color: #ECEFF1;
+    box-shadow: 1px 0 6px rgba(0, 0, 0, .2);
+    transition-duration: .25s;
+}
+
+.menu__item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition-duration: .25s;
+}
+.menu__item:hover {
+    background-color: #CFD8DC;
+}
+
+/*header-end*/
+
+/*hero-start*/
+#hero{
+    padding: 40px 0;
+}
+.hero{
+    display: flex;
+    align-items: center;
+}
+.hero-logo h3{
     font-weight: 600;
     font-size: 16px;
     color: #16FCD2;
 }
-.novve-2 h1{
+.hero-logo h1{
     font-weight: 700;
     font-size: 36px;
     line-height: 54px;
     color: #FFFFFF;
-}
-.select {
-    padding: 10px 20px;
-    background: #2b2b2c;
-    color: #dac5c5;
-}
-.mobile-square{
     width: 502px;
-    height: 441px;background: #161629;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 30px 60px rgba(96, 22, 252, 0.03);
-    border-radius: 10px;
 }
-.title{
-    margin: 33px 174px ;
-    width: 154px;
-    height: 26px;
-    background: #212136;
-    border-radius: 100px;
+.tell-square{
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+    width: 50px;
+    height: 50px;
+    margin: 4px 20px;
+
 }
-.title2{
-    width: 94px;
-    height: 26px;
-    background: #212136;
-    border-radius: 100px;
-    margin: 20px 200px;
+.hero-logo p{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(255, 255, 255, 0.6);
+
 }
-.title3{
-    width: 194px;
-    height: 256px;
-    background: rgba(44, 44, 70, 0.5);
-    border-radius: 20px 20px 0 0;
-    margin: 65px 150px;
-}
-.mobile h1{
+.hero-logo h1{
     font-weight: 700;
     font-size: 20px;
-    text-align: center;
+    line-height: 27px;
     color: #FFFFFF;
     padding: 20px 0;
 
 }
-.mobile p{
-    font-weight: 400;
-    font-size: 16px;
-    text-align: center;
-    color: rgba(255, 255, 255, 0.6);
+.tell-square ion-icon{
+    margin: 3px 5px;
+    font-size: 40px;
+}
+.tell-45{
+    display: flex;
+}
+.tell-46{
+    display: flex;
 
 }
-.mobile-1{
+.hero-title{
+    width: 412px;
+    height: 508px;background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+}
+.hero-square{
+    width: 412px;
+    height: 508px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+
+
+}
+.hero-square3{
     display: flex;
-    /*justify-content: space-around;*/
-    align-items: center;
 }
-.mobile button{
-    font-weight: 500;
+.hero-square4{
+    display: flex;
+}
+.hero-square2{
+    width: 160px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    margin-left: 36px;
+}
+.herup h4{
+    font-weight: 400;
     font-size: 14px;
-    color: #FFFFFF;
-    background: rgba(11, 11, 34, 0.9);
-    backdrop-filter: blur(87px);
-    padding: 15px 20px;
-    margin: 30px 200px 0 200px;
-    border-radius: 20px;
+    color: rgba(255, 255, 255, 0.6);
+    padding-left:36px;
+    padding-top: 52px;
 }
-.mobile button:hover{
-    transform: scale(1.1);
-    color: black;
-    background: #6016FC;
+.herot{
+    width: 341px;
+    height: 130px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    margin-left: 36px;
 }
-.button-btn button{
+.hero-square h3{
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    padding-left:36px;
+    padding-top: 52px;
+}
+.hero-square button{
     font-weight: 600;
     font-size: 16px;
     text-align: center;
     color: #FFFFFF;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 3px;
-    padding: 20px 79px;
-    margin-top: 30px;
-    margin-left: 420px;
-}
-.button-btn button:hover{
-    transform: scale(1.1);
     background: #6016FC;
-    color: white;
+    border-radius: 3px;
+    padding: 15px 110px;
+    margin: 10px 50px;
 }
-/*mobile-end*/
+.hero-square button:hover{
+    transform: scale(1.1);
+    background: #FFFFFF;
+    color: #161629;
+}
+/*hero-end*/
+
 
 /*time-start*/
 #time{
@@ -223,11 +320,6 @@ button{
     transform: rotate(-34.72deg);
     border-radius: 50%;
     margin: 0 0 120px 080px
-}
-.forbes-line{
-    width: 100%;
-    height: 2px;
-    background: rgba(255, 255, 255, 0.1);
 }
 /*time-end*/
 
